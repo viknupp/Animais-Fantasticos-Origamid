@@ -1,7 +1,7 @@
 import SmoothScroll from "./modules/smooth-scroll.js";
 import Accordion from "./modules/accordion.js";
 import TabNav from "./modules/tabnav.js";
-import initAnimaScroll from "./modules/anima-scroll.js";
+import ScrollAnima from "./modules/anima-scroll.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
@@ -29,7 +29,9 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
-initAnimaScroll();
+const scrollAnima = new ScrollAnima(".js_scroll");
+scrollAnima.init();
+
 initDropDownMenu();
 initMenuMobile();
 initWorkHour();
