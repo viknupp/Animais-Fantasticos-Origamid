@@ -8,7 +8,7 @@ import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initWorkHour from "./modules/work-hour.js";
 import fetchAnimals from "./modules/fetch-animals.js";
-import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import fetchBitcoin from "./modules/fetch-bitcoin.js";
 
 const smoothScroll = new SmoothScroll('.js_menu a[href^="#"]');
 smoothScroll.init();
@@ -33,6 +33,6 @@ initAnimaScroll();
 initDropDownMenu();
 initMenuMobile();
 initWorkHour();
-initFetchBitcoin();
 
 fetchAnimals("../../animals-api.json", ".grid_numbers");
+fetchBitcoin("https://blockchain.info/ticker", ".btc_price");
