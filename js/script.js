@@ -7,7 +7,7 @@ import Tooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initWorkHour from "./modules/work-hour.js";
-import initFetchAnimals from "./modules/fetch-animals.js";
+import fetchAnimals from "./modules/fetch-animals.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 const smoothScroll = new SmoothScroll('.js_menu a[href^="#"]');
@@ -33,5 +33,6 @@ initAnimaScroll();
 initDropDownMenu();
 initMenuMobile();
 initWorkHour();
-initFetchAnimals();
 initFetchBitcoin();
+
+fetchAnimals("../../animals-api.json", ".grid_numbers");
