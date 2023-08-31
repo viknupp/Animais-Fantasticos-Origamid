@@ -41,5 +41,5 @@ menuMobile.init();
 const workHour = new WorkHour();
 workHour.init("[data-week]", "open");
 
-fetchAnimals("../../animals-api.json", ".grid_numbers");
+fetchAnimals("./animals-api.json", ".grid_numbers");
 fetchBitcoin("https://blockchain.info/ticker", ".btc_price");
