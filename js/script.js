@@ -4,7 +4,7 @@ import TabNav from "./modules/tabnav.js";
 import ScrollAnima from "./modules/anima-scroll.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
-import initDropDownMenu from "./modules/dropdown-menu.js";
+import DropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initWorkHour from "./modules/work-hour.js";
 import fetchAnimals from "./modules/fetch-animals.js";
@@ -32,7 +32,9 @@ tooltip.init();
 const scrollAnima = new ScrollAnima(".js_scroll");
 scrollAnima.init();
 
-initDropDownMenu();
+const dropDownMenu = new DropDownMenu("[data-dropdown]");
+dropDownMenu.init();
+
 initMenuMobile();
 initWorkHour();
 
