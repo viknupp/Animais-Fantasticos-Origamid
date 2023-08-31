@@ -1,16 +1,39 @@
-export default function initWorkHour() {
-  const work = document.querySelector("[data-week]");
-  const weekDays = work.dataset.week.split(",").map(Number);
-  const weekHour = work.dataset.time.split(",").map(Number);
+export default class WorkHour {
+  constructor(work, activeClass) {
+    this.work = document.querySelector(work);
+    this.activeClass = activeClass;
+  }
 
-  const nowDate = new Date();
-  const dayNow = nowDate.getDay();
-  const timeNow = nowDate.getHours();
+  workData() {
+    this.weekDays = this.work.dataset.week.split(",").map(Number);
+    this.weekHour = this.work.dataset.time.split(",").map(Number);
+  }
 
-  const openDay = weekDays.indexOf(dayNow) !== -1;
-  const openTime = timeNow >= weekHour[0] && timeNow < weekHour[1];
+  nowData() {
+    this.nowDate = new Date();
+    this.dayNow = this.nowDate.getDay();
+    this.timeNow = this.nowDate.getUTCHours() - 3;
+  }
 
-  if (openDay && openTime) {
-    work.classList.add("open");
+  isOpen() {
+    const openDay = this.weekDays.indexOf(this.dayNow) !== -1;
+    const openTime =
+      this.timeNow >= this.weekHour[0] && this.timeNow < this.weekHour[1];
+    return openDay && openTime;
+  }
+
+  activeOpen() {
+    if (this.isOpen()) {
+      this.work.classList.add(this.activeClass);
+    }
+  }
+
+  init() {
+    if (this.work) {
+      this.workData();
+      this.nowData();
+      this.activeOpen();
+    }
+    return this;
   }
 }
