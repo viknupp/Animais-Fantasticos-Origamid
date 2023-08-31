@@ -5,7 +5,7 @@ import ScrollAnima from "./modules/anima-scroll.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import DropDownMenu from "./modules/dropdown-menu.js";
-import initMenuMobile from "./modules/menu-mobile.js";
+import MenuMobile from "./modules/menu-mobile.js";
 import initWorkHour from "./modules/work-hour.js";
 import fetchAnimals from "./modules/fetch-animals.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
@@ -35,7 +35,9 @@ scrollAnima.init();
 const dropDownMenu = new DropDownMenu("[data-dropdown]");
 dropDownMenu.init();
 
-initMenuMobile();
+const menuMobile = new MenuMobile("[data-menu='button']", "[data-menu='list']");
+menuMobile.init();
+
 initWorkHour();
 
 fetchAnimals("../../animals-api.json", ".grid_numbers");
